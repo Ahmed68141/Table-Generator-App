@@ -1,20 +1,34 @@
-let inp = document.getElementById("tb-inp")
-let inp2 = document.getElementById("tb-inp2")
-let btn2 = document.getElementById("clear-btn")
-let btn = document.getElementById("tb-btn")
-let p = document.querySelector("p")
-btn.addEventListener("click",function(){
-    let num = Number(inp.value);
+let numberInput = document.getElementById("number-input");
+let limitInput = document.getElementById("limit-input");
+let clearButton = document.getElementById("clear-button");
+let messageOutput = document.querySelector(".message-output");
+let generateButton = document.getElementById("generate-button");
+let appContainer = document.querySelector("section.app-card");
+let resultOutput = document.createElement("p");
 
-    p.innerHTML="";
-    if(num > 0 ){
-    for(let i = 1; i<= Number(inp2.value);i++){
-p.innerHTML += `${num} &#215; ${i} = ${num *  i} <br>`
+generateButton.addEventListener("click", function() {
+    let number = Number(numberInput.value);
+    let limit = Number(limitInput.value);
+
+    appContainer.appendChild(resultOutput);
+    resultOutput.innerHTML = "";
+    messageOutput.innerHTML = "";
+
+    if (limit <= 1500) {
+        if (number > 0 && limit > 0) {
+            for (let i = 1; i <= limit; i++) {
+                resultOutput.innerHTML += `${number} × ${i} = ${number * i} <br>`;
+            }
+        } else {
+            messageOutput.innerHTML = `<h1 class="calculation-message">Cannot be calculated</h1>`;
+            appContainer.appendChild(messageOutput);
+        }
+    } else {
+        messageOutput.innerHTML = `<div class="error-message"><h1>Number cannot be greater than 1500 in Limit</h1></div>`;
+        appContainer.appendChild(messageOutput);
     }
-    }
+});
 
-})
-
-btn2.addEventListener("click",function(){
-   location.reload();
-})
+clearButton.addEventListener("click", function() {
+    location.reload();
+});
