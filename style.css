@@ -1,3 +1,16 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f172a, #1e293b, #312e81);
+}
+h1{
+    font-family: sans-serif;
+    margin: 20px 0px;
+}
 section.app-card{
     width: 400px;
     margin: 30px auto;
@@ -13,13 +26,127 @@ section.app-card{
     align-items: center;
     gap: 12px;
 }
+#number-input,
+#limit-input{
+    width: 250px;
+    padding: 12px;
+    font-size: 20px;
 
+    color: white;
+    background: rgba(255,255,255,0.08);
+
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 10px;
+
+    outline: none;
+    transition: 0.3s;
+}
+
+#number-input:focus,
+#limit-input:focus{
+    transform: scale(1.03);
+    border-color: #60a5fa;
+}
+
+#clear-button{
+    width: 170px;
+    padding: 12px;
+
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+
+    border: none;
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+
+    transition: all 0.3s ease;
+}
+#generate-button {
+    width: 170px;
+    padding: 12px;
+    margin-top: 10px;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+
+    border: none;
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+
+    transition: all 0.3s ease;
+}
+#generate-button:hover{
+    transform: translateY(-3px) scale(1.05);
+
+    box-shadow:
+        0 10px 25px rgba(59,130,246,0.4),
+        0 10px 25px rgba(139,92,246,0.4);
+}
+#clear-button:hover{
+    transform: translateY(-3px) scale(1.05);
+
+    box-shadow:
+        0 10px 25px rgba(59,130,246,0.4),
+        0 10px 25px rgba(139,92,246,0.4);
+}
+p{
+    color: white;
+    font-size: 28px;
+    text-align: center;
+
+    line-height: 1.4;
+    font-family: Consolas, monospace;
+}
+::placeholder{
+    color: rgb(204, 204, 204);
+}
+h1{
+    text-align: center;
+    color: white;
+    font-family: monospace;
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+@media (max-width: 480px) {
+    section.app-card {
+        width: 90%;
+        padding: 20px;
+        margin: 20px auto;
+    }
+
+    #number-input,
+    #limit-input {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    #generate-button {
+        width: 100%;
+    }
+    #clear-button {
+        width: 100%;
+    }
+    h1 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 18px;
+        word-wrap: break-word;
+    }
+}
 .calculation-message{
     color: white;
     font-size: 30px;
     text-align: center;
 }
-
 .error-message {
     width: 300px;
     padding: 15px;
@@ -35,7 +162,6 @@ section.app-card{
     font-size: 20px;
     font-weight: 600;
 }
-
 .message-output{
     height: auto;
 }
