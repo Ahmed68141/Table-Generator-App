@@ -134,13 +134,20 @@ h1{
         width: 100%;
     }
     h1 {
-        font-size: 24px;
+        font-size: 20px;
     }
 
     p {
         font-size: 18px;
         word-wrap: break-word;
     }
+.error-message{
+     width: 240px;
+}
+.error-message h1{
+    font-size: 20px;
+}
+
 }
 .calculation-message{
     color: white;
