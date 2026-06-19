@@ -7,27 +7,16 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <section class="app-card">
         <h1 class="app-title">Ahmed Table Generator App</h1>
-
-        <input
-            type="number"
-            id="number-input"
-            placeholder="Enter Number"
-        >
-        <input
-            type="number"
-            id="limit-input"
-            placeholder="Enter Limit"
-        >
-
+        <input type="number" id="number-input" placeholder="Enter Number">
+        <input type="number" id="limit-input" placeholder="Enter Limit">
         <button id="generate-button">Generate Table</button>
         <button id="clear-button">Clear All</button>
-
-        <p class="message-output"></p>
+        <div class="result-box">
+            <p class="message-output"></p>
+        </div>
     </section>
-
     <script src="./script.js"></script>
 </body>
 </html>
